@@ -5,10 +5,11 @@
         <div class="container">
           <div class="columns is-vcentered reverse-columns">
             <div class="column is-10-mobile is-10-tablet is-5-desktop is-5-widescreen is-5-fullhd">
-              <h1 class="title titled is-1 mb-6">Helping people track all the delicious things they want to eat.</h1>
+              <p>{{ $t('homePage.hello') }}</p>
+              <h1 class="title titled is-1 mb-6">{{ $t('homePage.about') }}</h1>
               <div class="buttons">
-                <router-link to="/restaurants" class="button is-primary">See all food</router-link>
-                <router-link to="/restaurants?new=true" class="button">Add new food</router-link>
+                <router-link to="/restaurants" class="button is-primary">{{ $t('homePage.allFoodButton') }}</router-link>
+                <router-link to="/restaurants?new=true" class="button">{{ $t('homePage.addFoodButton') }}</router-link>
               </div>
             </div>
             <div

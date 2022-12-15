@@ -75,19 +75,19 @@ onMounted(() => {
 
       <!-- Main Content -->
       <div class="column">
-        <h1 class="title">Dishes</h1>
+        <h1 class="title">{{ $t('dish.dishName')}}</h1>
 
         <!-- CTA Bar -->
         <nav v-if="!showNewForm" class="level">
           <div class="level-left">
             <div class="level-item">
               <p class="subtitle is-5">
-                <strong>{{ numberOfDishes }}</strong> dishes
+                <strong>{{ numberOfDishes }}</strong> {{$t('dish.dishName')}}
               </p>
             </div>
 
             <p class="level-item">
-              <button @click="showNewForm = true" class="button is-success">New</button>
+              <button @click="showNewForm = true" class="button is-success">{{$t('global.new')}}</button>
             </p>
 
             <div class="level-item is-hidden-tablet-only">
@@ -96,7 +96,7 @@ onMounted(() => {
                   <input class="input" type="text" placeholder="Dish name" :value="filterText" @keyup.enter="updateFilterText" />
                 </p>
                 <p class="control">
-                  <button class="button">Search</button>
+                  <button class="button">{{$t('global.search')}}</button>
                 </p>
               </div>
             </div>

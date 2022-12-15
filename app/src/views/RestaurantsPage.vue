@@ -86,28 +86,28 @@ onMounted(() => {
 
       <!-- Main Content -->
       <div class="column">
-        <h1 class="title">Restaurants</h1>
+        <h1 class="title">{{ $t('theNavbar.Restaurants') }}</h1>
 
         <!-- CTA Bar -->
         <nav v-if="!showNewForm" class="level">
           <div class="level-left">
             <div class="level-item">
               <p class="subtitle is-5">
-                <strong>{{ numberOfRestaurants }}</strong> restaurants
+                <strong>{{ numberOfRestaurants }}</strong> {{ $t('theNavbar.Restaurants') }}
               </p>
             </div>
 
             <p class="level-item">
-              <button @click="showNewForm = true" class="button is-success">New</button>
+              <button @click="showNewForm = true" class="button is-success">{{$t('global.new')}}</button>
             </p>
 
             <div class="level-item is-hidden-tablet-only">
               <div class="field has-addons">
                 <p class="control">
-                  <input class="input" type="text" placeholder="Restaurant name" v-model="filterText" />
+                  <input class="input" type="text" :placeholder="$t('restaurant.restaurantName')" v-model="filterText" />
                 </p>
                 <p class="control">
-                  <button class="button">Search</button>
+                  <button class="button">{{$t('global.search')}}</button>
                 </p>
               </div>
             </div>

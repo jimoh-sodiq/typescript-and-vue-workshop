@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import LocaleSelect from './LocaleSelect.vue'
+
+const { t } = useI18n({ useScope: 'global' })
+
 // props: ['tagline']
 defineProps({
   tagline: {
@@ -7,18 +12,22 @@ defineProps({
     required: true,
   },
 })
+
 const navList = ref([
   {
     name: 'Home',
     path: '/',
+    translation: 'theNavbar.Home',
   },
   {
     name: 'Restaurants',
     path: '/restaurants',
+    translation: 'theNavbar.Restaurants',
   },
   {
     name: 'Dishes',
     path: '/dishes',
+    translation: 'theNavbar.Dishes',
   },
 ])
 </script>
@@ -37,8 +46,13 @@ const navList = ref([
         </div>
       </div>
       <div class="navbar-end">
+        <!-- <select v-model="currentLocale">
+          <option default disabled>Select Language</option>
+          <option v-for="locale in localeOptions" :value="locale.code">{{ locale.label }}</option>
+        </select> -->
+        <LocaleSelect />
         <div v-for="navItem in navList" class="navbar-item" :key="`nav-${navItem.name}`">
-          <RouterLink :to="navItem.path">{{ navItem.name }}</RouterLink>
+          <RouterLink :to="navItem.path">{{ $t(navItem.translation) }}</RouterLink>
         </div>
       </div>
     </div>

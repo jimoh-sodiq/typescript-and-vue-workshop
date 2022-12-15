@@ -45,8 +45,7 @@ onMounted(() => {
         <label for="name" class="label">Name</label>
         <div class="control">
           <input
-            :value="newRestaurant.name"
-            @keyup.space="updateName"
+            v-model="newRestaurant.name"
             type="text"
             class="input is-large"
             placeholder="Beignet and the Jets"
